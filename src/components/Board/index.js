@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Row from '../Row'
 
 class Board extends Component {
     constructor(props) {
@@ -50,13 +51,23 @@ class Board extends Component {
             }
         }
 
-        console.table(board)
+        return board
     }
 
     render() {
-        return (
-            <div>
+        // creates rows
+        let rows = this.state.rows.map((row, index) => {
+            return (
+                <Row
+                    cells={row}
+                    key={index}
+                />
+            )
+        })
 
+        return (
+            <div className="board">
+                {rows}
             </div>
         )
     }
