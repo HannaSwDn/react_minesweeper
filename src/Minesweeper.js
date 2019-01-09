@@ -13,7 +13,7 @@ class Minesweeper extends Component {
   render() {
     return (
       <div className="minesweeper">
-          <Board />
+          <Board rows={this.state.rows} columns={this.state.columns}/>
       </div>
     );
   }

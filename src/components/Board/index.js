@@ -11,7 +11,8 @@ class Board extends Component {
 
     createBoard = (props) => {
         let board = []
-
+        
+        // creates a column of cells for each row on the board
         for (let i = 0; i < props.rows; i++) {
             board.push([])
 
@@ -23,10 +24,16 @@ class Board extends Component {
                     isOpen: false,
                     hasMine: false,
                     hasFlag: false
+                    // x: cell placement in the row
+                    // y: cell placement in the column
+                    // count: how many mines around the cell
+                    // isOpen: if cell is open or closed
+                    // hasMine: if cell has a mine on it
+                    // hasFlag: if cell has a flag on it
                 })
             }
         }
-        console.log(board)
+        console.table(board)
     }
 
     render() {
