@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Board from './components/Board'
 import './Minesweeper.css';
 
 class Minesweeper extends Component {
@@ -12,7 +13,7 @@ class Minesweeper extends Component {
   render() {
     return (
       <div className="minesweeper">
-        
+          <Board />
       </div>
     );
   }
