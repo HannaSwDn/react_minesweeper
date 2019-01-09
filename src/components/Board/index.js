@@ -38,11 +38,19 @@ class Board extends Component {
         for (let i = 0; i < props.mines; i++) {
             let randomRow = Math.floor(Math.random() * props.rows)
             let randomColumn = Math.floor(Math.random() * props.columns)
+
             let cell = board[randomRow][randomColumn]
-            console.table(cell)
+            
+            // checks if cell already has a mine
+            // if it is true, subtract i to go back one step in the for loop
+            if (cell.hasMine) {
+                i--;
+            } else {
+                cell.hasMine = true;
+            }
         }
 
-        // console.table(board)
+        console.table(board)
     }
 
     render() {
