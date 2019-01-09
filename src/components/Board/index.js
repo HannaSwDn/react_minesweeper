@@ -33,7 +33,16 @@ class Board extends Component {
                 })
             }
         }
-        console.table(board)
+
+        // adding mines to random places on the board
+        for (let i = 0; i < props.mines; i++) {
+            let randomRow = Math.floor(Math.random() * props.rows)
+            let randomColumn = Math.floor(Math.random() * props.columns)
+            let cell = board[randomRow][randomColumn]
+            console.table(cell)
+        }
+
+        // console.table(board)
     }
 
     render() {
